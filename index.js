@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
 const handleDisplay = (data)=>{
 const cardId = document.getElementById("cards");
 data.forEach(el => {
-        console.log(el.Description);
     const div = document.createElement("div");
     const titleWords = el.Title.split(" ");
     const firstWord = titleWords.length > 0 ? titleWords[0] : "";
@@ -21,7 +20,13 @@ data.forEach(el => {
     const fourthWord = titleWords.length > 3 ? titleWords[3] : "";
     const fiveWord = titleWords.length > 4 ? titleWords[4] : "";
     div.className = "card";
-      div.style.backgroundImage = `url('${el.image}')`;
+    const image = document.createElement("img");
+    image.src = el.image;
+    console.log(image);
+    
+    image.loading = "lazy";
+   div.style.background = `url('${image.src}') center/cover no-repeat`;
+
     div.innerHTML = `
  
 
@@ -47,8 +52,7 @@ data.forEach(el => {
     
     `;
     cardId.appendChild(div)
-    
+  
 });
 }
 
-// handleDisplay()

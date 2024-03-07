@@ -81,6 +81,10 @@ body {
 
 
 
+.card:first-child .card-header .card-title {
+  margin-top: 53%;
+}
+
 .card:first-child .card-header .card-title span:first-child {
   color: #FFC758;
 
@@ -143,7 +147,7 @@ body {
   top: 10%;
   left: 0;
   background-position: left bottom;
-  
+
 
 
 
@@ -195,7 +199,7 @@ body {
   }
 
   .card-title {
-    font-size: 26px;
+
     margin-bottom: -20%;
 
   }
