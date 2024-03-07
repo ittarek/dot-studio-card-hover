@@ -1,0 +1,237 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Gotham-Light, sans-serif;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/gotham/Gotham-Light.otf') format('opentype'),
+
+    url('/gotham/Gotham-XLight.otf') format('embedded-opentype');
+
+
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.heading {
+  padding: 15px;
+  text-align: center;
+
+}
+
+.heading span {
+  color: #114A8D;
+
+
+}
+
+#cards {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 45rem;
+  height: 500px;
+}
+
+.card-title {
+  /* filter: brightness(500%); */
+  color: #FFFFFF;
+  font-size: 26px;
+  position: relative;
+  margin-top: 45%;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0px 10px 10px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+
+
+}
+
+
+
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(180.68deg, rgba(0, 0, 0, 0) -9.3%, rgba(0, 0, 0, 0.2) 48.1%, #000000 99.41%);
+  z-index: 1;
+  transition-property: top, opacity;
+  transition-duration: 0.3s;
+
+}
+
+
+
+.card:first-child .card-header .card-title span:first-child {
+  color: #FFC758;
+
+
+}
+
+.card:nth-child(2) .card-header .card-title span:nth-child(3) {
+  color: #FFC758;
+}
+
+.card:hover:nth-child(2) .hoverItem {
+  margin-top: -50%;
+}
+
+.card:hover:nth-child(3) .hoverItem {
+  margin-top: -50%;
+}
+
+.card:nth-child(3) .card-header .card-title span:nth-child(1) {
+  color: #FFC758;
+}
+
+.card:nth-child(3) .card-header .card-title {
+  /* width: 100%; */
+  margin-top: 45%;
+}
+
+.card:nth-child(3) .card-header .card-title span:nth-child(3) {
+  color: #FFC758;
+}
+
+.card:nth-child(4) .card-header .card-title span:nth-child(3) {
+  color: #FFC758;
+}
+
+.card:hover:nth-child(4) .hoverItem {
+  margin-top: -50%;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: -100%;
+  display: block;
+  width: 100%;
+  height: 80%;
+  margin: auto;
+  background: #CA2748;
+  z-index: 1;
+  transition: 0.7s all;
+  opacity: 0;
+
+
+}
+
+
+.card:hover::before {
+  opacity: 1;
+  top: 10%;
+  left: 0;
+  background-position: left bottom;
+  
+
+
+
+}
+
+.card:hover .card-title {
+  opacity: 0;
+}
+
+.hoverItem {
+  display: block;
+  /* margin-top: -50px; */
+  opacity: 0;
+  position: relative;
+  font-size: 14px;
+  color: white;
+  z-index: 3;
+  left: 10%;
+  /* top: 10%; */
+  width: 80%;
+  text-align: center;
+  height: 75%;
+  transition: 0.5s all;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+  /* transform: translateY(100%); */
+}
+
+.hoverItem p {
+  margin-top: 10px;
+}
+
+.card:hover .hoverItem {
+  opacity: 1;
+  margin-top: -40%;
+}
+
+/* responsive for mobile */
+@media screen and (max-width:600px) {
+  #cards {
+    margin: auto;
+
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .card-title {
+    font-size: 26px;
+    margin-bottom: -20%;
+
+  }
+
+  .card:first-child .card-header .card-title {
+    bottom: 15px;
+    margin-top: 70%;
+  }
+
+  .card:nth-child(2) .card-header .card-title {
+    bottom: -20px;
+    margin-top: 70%;
+
+  }
+
+  .card:nth-child(3) .card-header .card-title {
+    bottom: -20px;
+    margin-top: 70%;
+  }
+
+  .card:nth-child(4) .card-header .card-title {
+    bottom: 15px;
+    margin-top: 70%;
+  }
+
+  .hoverItem {
+
+
+    width: 80%;
+    text-align: center;
+    height: 100%;
+  }
+
+  .card:hover .hoverItem {
+
+    top: -40%;
+  }
+
+}
